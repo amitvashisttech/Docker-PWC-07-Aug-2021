@@ -51,3 +51,47 @@
    51  ls
    52  history > README.md
 ```
+
+
+```
+ 61  echo "========================== Demo 2 =============================="
+   62  docker network ls
+   63  docker ps
+   64  docker kill $(docker ps -qa )
+   65  docker rm $(docker ps -qa )
+   66  docker network ls
+   67  docker network create --help
+   68  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 mybr0
+   69  docker ps
+   70  docker network ls
+   71  docker network inspect mybr0
+   72  docker run -d --name test-nw-12 --network "mybr0" -P mypython-web-app:v3
+   73  docker run -d --name test-nw-13 --network "mybr0" -P mypython-web-app:v3
+   74  docker network inspect mybr0
+   75  docker ps
+   76  docker run -itd --name test-1 ubuntu:16.04
+   77  docker exec -it test-1 ip addr
+   78  docker ps
+   79  docker inspect test-1
+   80  docker run -d --name test-nw-14 --network none mypython-web-app:v3
+   81  docker ps
+   82  docker inspect test-nw-14
+   83  ls
+   84  docker kill $(docker ps -qa )
+   85  docker rm $(docker ps -qa )
+   86  docker network ls
+   87  netstat -tulnp
+   88  docker run -d --name test-nw-16 --network host mypython-web-app:v3
+   89  docker ps
+   90  docker inspect test-nw-16
+   91  netstat -tulnp
+   92  curl localhost:8081
+   93* ps -ef
+   94  curl localhost:8081 | grep -i python
+   95  ps -ef  | grep -i python
+   96  ip addr
+   97  docker run -d --name test-nw-17 -P  mypython-web-app:v3
+   98  docker ps
+   99  netstat -tulnp
+  100  systemctl status docker
+```
